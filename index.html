@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="eS">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREE LEARNING BOOKS</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css"/>
+</head>
+<body>
+    <header>
+        <h1>FREE LEARNING BOOKS</h1>
+    </header>
+
+    <main>
+        <div class = "book-picture">
+            <img src="./assets/Interface_Circuits_for_Microsensor_Integrated_Systems-OpenLibra.jpg" />
+        </div>
+        <form>
+            <div class = "search-bar ">
+                <input list = "books" class = "alternate-color"/>
+                    <datalist id = "books"type="search"/>
+                    
+                    </datalist>
+            </div>
+
+            <div class = "categories" >
+                <select name="select" id = "category" class = "alternate-color" size="1">
+                    <option value="CATEGORY" selected>CATEGORY</option>
+                </select>
+                
+                <select name="select" id = "subcategory" category = "category" class = "alternate-color size="1">
+                    <option value="SUBCATEGORY" selected>SUBCATEGORY</option>
+                </select>
+            </div>
+            <div class = "generate">
+                <input type="button" class = "alternate-color" value = "GENERATE">
+            </div>
+        </form>
+    </main>
+    <script src = "./script.js"></script>
+</body>
+</html>
