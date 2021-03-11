@@ -20,12 +20,12 @@ main {
     flex-direction: column;
     justify-content: center;
 }
-.book-picture {
+.book {
     display: flex;
     justify-content: center;
 }
 
-.book-picture img {
+.book img {
     width: 20rem;
 }
 
@@ -64,6 +64,9 @@ main {
     outline: none;
     margin: auto 0.1rem;
 }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
 
 .categories select option {
     text-align: center;

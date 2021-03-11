@@ -8,16 +8,16 @@
 </head>
 <body>
     <header>
-        <h1>FREE LEARNING BOOKS</h1>
+        <h1>FREE LEARNING BOOKS BETA</h1>
     </header>
 
     <main>
-        <div class = "book-picture">
-            <img src="./assets/Interface_Circuits_for_Microsensor_Integrated_Systems-OpenLibra.jpg" />
+        <div class = "book">
+            <a href="." id = "book-link" ><img id = "book-image" src="./assets/POSTER.png" /></a>
         </div>
         <form>
             <div class = "search-bar ">
-                <input list = "books" class = "alternate-color"/>
+                <input list = "books" id = "book-title" class = "alternate-color"/>
                     <datalist id = "books"type="search"/>
                     
                     </datalist>
@@ -33,7 +33,7 @@
                 </select>
             </div>
             <div class = "generate">
-                <input type="button" class = "alternate-color" value = "GENERATE">
+                <input id = "generate-button"type="button" class = "alternate-color" value = "GENERATE">
             </div>
         </form>
     </main>

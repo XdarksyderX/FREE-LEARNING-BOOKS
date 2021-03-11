@@ -43,6 +43,7 @@ fetchData("https://www.etnassoft.com/api/v1/get/?get_categories=all").then( valu
 
 const CATEGORY = document.getElementById('category');
 const SUBCATEGORY = document.getElementById('subcategory');
+const GENERATE = document.getElementById('generate-button');
 
 let appended = false
 const appendCategories = _ => {
@@ -86,10 +87,44 @@ CATEGORY.addEventListener('mouseenter', ev => {
 })
 
 
-
 CATEGORY.addEventListener('change', ev => {
         removeSubcategories()
         appendSubcategories()
     }
     
+)
+let book = {
+    image : document.getElementById('book-image'),
+    link : document.getElementById('book-link'),
+    title : document.getElementById('book-title')
+}
+
+ GENERATE.addEventListener('click', ev => {
+        if (SUBCATEGORY.value !== 'SUBCATEGORY')
+        {
+            
+            fetchData(`https://www.etnassoft.com/api/v1/get/?subcategory_id=${SUBCATEGORY.value}`)
+            .then( val => {
+                
+                const BOOK = val[Math.floor(Math.random() * val.length + 1)]
+                console.log(BOOK)
+                book.image.setAttribute("src", BOOK.cover);
+                book.link.setAttribute("href", BOOK.url_download);
+                book.title.setAttribute("value", BOOK.title);
+            })
+        }
+        else {
+            console.log(`https://www.etnassoft.com/api/v1/get/?category_id=${CATEGORY.value}`)
+            fetchData(`https://www.etnassoft.com/api/v1/get/?category_id=${CATEGORY.value}`).then( val => {
+                
+                const BOOK = val[Math.floor(Math.random() * val.length + 1)]
+                console.log(BOOK)
+                book.image.setAttribute("src", BOOK.cover);
+                book.link.setAttribute("href", BOOK.url_download);
+                book.title.setAttribute("value", BOOK.title);
+            })
+            
+
+        }
+    }
 )
